@@ -4,7 +4,7 @@ var apiKey = "9eae867a080f9af2699befe3342e98ce"
 
 var searchBtn = $('.searchBtn')
 
-var cityBtn = $('.cityBtn')
+// var cityBtn = $('.cityBtn')
 
 for (var i = 0; i < localStorage.length; i++) {
 
@@ -110,10 +110,11 @@ searchBtn.click(function (event) {
 });
 
 // Search history button click event
-cityBtn.click(function (event) {
+$('.cityBtn').click(function (event) {
     event.preventDefault();
 
-    var city = $(".cityBtn").val();
+    var city = $(".cityBtn").html();
+    console.log("city", city)
 
     var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + apiKey + "&units=imperial";
 
@@ -123,9 +124,7 @@ cityBtn.click(function (event) {
             url: currentUrl,
             method: "GET"
         }).then(function (response) {
-            var cityName = $(".list-group").addClass("list-group-item");
-            cityName.append("<li>" + "<button class='cityBtn'>" + response.name + "</button>" + "</li>");
-
+            
             // Current Weather 
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
             currentCard.empty();
