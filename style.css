@@ -18,6 +18,11 @@ h1 {
     border: solid 2px;
 }
 
-/* .currentCard {
+.currentCard {
     border: solid 2px;
-} */
+    max-width: 20em;
+}
+
+.fiveDayList {
+    width: 15em;
+}
