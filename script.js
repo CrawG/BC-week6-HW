@@ -31,12 +31,11 @@ searchBtn.click(function () {
             url: currentUrl,
             method: "GET"
         }).then(function (response) {
-            // list-group append an li to it with just set text
             var cityName = $(".list-group").addClass("list-group-item");
             cityName.append("<li>" + response.name + "</li>");
 
             var local = localStorage.setItem(keyCount, response.name);
-            keyCount = keyCount + 1;
+            keyCount = keyCount ++;
 
             // Current Weather 
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
@@ -70,7 +69,6 @@ searchBtn.click(function () {
                 currentTemp.append(currentUV);
                 currentUV.find('p').last('p').addClass("uv-value");
 
-
                 if (UV < 3){
                     $('.uv-value').css("background-color", "green");
                   }else if (UV >= 3 && UV < 6){
@@ -96,8 +94,8 @@ searchBtn.click(function () {
         // For each for 5 days
         day.forEach(function (i) {
             var FiveDayTimeUTC1 = new Date(response.list[i].dt * 1000);
+            
             FiveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
-
             fiveDayDiv.append("<div class='fiveDayCard pl-4 pt-2 mb-2'>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>");
 
 
