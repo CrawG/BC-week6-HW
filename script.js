@@ -38,7 +38,7 @@ searchBtn.click(function (event) {
             cityName.append("<li>" + "<button class='cityBtn'>" + response.name + "</button>" + "</li>");
 
             var local = localStorage.setItem(keyCount, response.name);
-            keyCount = keyCount +1;
+            keyCount = keyCount ++;
 
             // Current Weather 
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
