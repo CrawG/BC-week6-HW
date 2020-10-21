@@ -26,3 +26,7 @@ h1 {
 .fiveDayList {
     width: 15em;
 }
+
+img {
+    max-width: 120px;
+}
