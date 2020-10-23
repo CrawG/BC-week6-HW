@@ -37,8 +37,9 @@ searchBtn.click(function (event) {
             var cityName = $(".list-group").addClass("list-group-item");
             cityName.append("<li>" + "<button class='cityBtn'>" + response.name + "</button>" + "</li>");
 
-            var local = localStorage.setItem(keyCount, response.name);
-            keyCount = keyCount ++;
+            keyCount = keyCount +1;
+            localStorage.setItem(keyCount, response.name);
+            
 
             // Current Weather 
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
@@ -92,7 +93,7 @@ searchBtn.click(function (event) {
         // Array for 5-days 
         var day = [0, 8, 16, 24, 32];
         var fiveDayList = $(".fiveDayList").addClass("card-body");
-        var fiveDayDiv = $(".fiveDayOne").addClass("card-text");
+        var fiveDayDiv = $(".fiveDayOne").addClass("col card-text");
         fiveDayDiv.empty();
         // For each for 5 days
         day.forEach(function (i) {
@@ -108,6 +109,7 @@ searchBtn.click(function (event) {
     }
 
 });
+
 
 // Search history button click event
 $('.cityBtn').click(function (event) {
@@ -177,7 +179,7 @@ $('.cityBtn').click(function (event) {
         // Array for 5-days 
         var day = [0, 8, 16, 24, 32];
         var fiveDayList = $(".fiveDayList").addClass("card-body");
-        var fiveDayDiv = $(".fiveDayOne").addClass("card-text");
+        var fiveDayDiv = $(".fiveDayOne").addClass("col card-text");
         fiveDayDiv.empty();
         // For each for 5 days
         day.forEach(function (i) {

@@ -20,9 +20,14 @@ h1 {
 
 .currentCard {
     border: solid 2px;
-    max-width: 20em;
+    width: 15em;
 }
 
 .fiveDayList {
     width: 15em;
+    /* display: flex; */
+}
+
+img {
+    max-width: 120px;
 }
