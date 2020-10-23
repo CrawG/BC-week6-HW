@@ -36,10 +36,10 @@ searchBtn.click(function (event) {
         }).then(function (response) {
             var cityName = $(".list-group").addClass("list-group-item");
             cityName.append("<li>" + "<button class='cityBtn'>" + response.name + "</button>" + "</li>");
-
-            keyCount = keyCount +1;
-            localStorage.setItem(keyCount, response.name);
             
+            localStorage.setItem(keyCount, response.name);
+            keyCount = keyCount +1;
+
 
             // Current Weather 
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
