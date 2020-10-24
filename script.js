@@ -114,8 +114,9 @@ searchBtn.click(function (event) {
 // Search history button click event
 $('.cityBtn').click(function (event) {
     event.preventDefault();
+    
+    var city = $(this).text();
 
-    var city = $(".cityBtn").html();
     console.log("city", city)
 
     var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + apiKey + "&units=imperial";
